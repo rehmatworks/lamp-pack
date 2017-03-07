@@ -82,7 +82,7 @@ if [ "$theAction" == "create" ]
 		    <div class="logo">Hurrah! Your Website is Ready</div>
 			<div class="col-md-8 col-md-offset-2">
 				<div class="sp-para">
-					<p>Now its time to sign in via SFTP and start uploading your real website files by deleting this one. If you are not sure how to do this, then please check <a href="https://github.com/rehmatworks/lamp-pack">GitHub page</a>.</p>
+					<p>Now its time to sign in via SFTP and start uploading your real website files by deleting this one. If you are not sure how to do this, then please check <a style="color:#ffffff;" href="https://github.com/rehmatworks/lamp-pack">GitHub page</a>.</p>
 				</div>
 				<div class="credit">Server proudly configured by LampPack by Rehmat</div>
 			</div>
