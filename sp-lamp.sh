@@ -1,11 +1,11 @@
 #!/bin/bash
 
-############################################
-#	Author:	Rehmat (https://rehmat.works)  #
-#	Description: A bash script to install  #
-#	AMP (Apache, MySQL, PHP) on Ubuntu 	   #
-#	servers								   #
-############################################
+#################################################
+#	Author:	Rehmat (https://rehmat.works)	#
+#	Description: A bash script to install	#
+#	AMP (Apache, MySQL, PHP) on Ubuntu	#
+#	servers					#
+#################################################
 
 # Check if is root or not
 if [ "$EUID" -ne 0 ]
