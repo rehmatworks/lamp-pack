@@ -97,12 +97,12 @@ elif [ "$theAction" == "delete" ]
 	then
 	if [ -f "/etc/apache2/sites-enabled/$domainName.conf" ]
 		then
-		sudo a2dissite $domainName
+		sudo a2dissite $domainName &>/dev/null
 		sudo rm -r $directoryName
 		sudo rm /etc/apache2/sites-available/$domainName.conf
 		echo -e "\e[32mThe website $domainName deleted!\e[39m"
 	else
-		echo -e "\e[31mThe website $domainName's configuration files were not found!\e[39m"
+		echo -e "\e[31mWe did not find vhost of $domainName\e[39m"
 		exit
 	fi
 else
