@@ -12,7 +12,7 @@ LampPack is a set of some bash/shell scripts that automate several tasks togethe
 Step 1: Clone the repo
 If git isn't installed, then install it first and then clone the repo
 ```bash
-sudo -y apt-get install git
+sudo apt-get -y install git
 ```
 and then:
 
