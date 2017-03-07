@@ -120,7 +120,7 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 		sudo chmod +x /usr/local/bin/spssl  &>/dev/null
 
 		# Import WordPress installation script
-		sudo mv sp-wp.sh /usr/local/bin/spwp &>/dev/null
+		sudo mv sp-wordpress.sh /usr/local/bin/spwp &>/dev/null
 		sudo chmod +x /usr/local/bin/spwp  &>/dev/null
 
 		# Restart Apache
