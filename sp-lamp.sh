@@ -13,7 +13,7 @@
 echo ''
 echo -e "\e[32mWelcome to LampPack LAMP automation bash script\e[39m"
 echo ''
-
+sleep 1
 echo -e "\e[32mPlease sit back and relax while LampPack configures your server, this may take several minutes\e[39m"
 
 echo ''
@@ -66,45 +66,56 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 
 	if hash mysql 2>/dev/null; then
 		echo -e "\e[31mWe detected that MySQL is already installed. Only clean servers are supported\e[39m"
+		echo ''
 	elif hash apache2 2>/dev/null; then
 		echo -e "\e[31mWe detected that Apache server is already installed. Only clean servers are supported\e[39m"
+		echo ''
 	elif hash php 2>/dev/null; then
 		echo -e "\e[31mWe detected that PHP is already installed. Only clean servers are supported\e[39m"
+		echo ''
 	else
 
 		# Run an update and upgrade for packages
 		echo "Checking for available software updates"
+		echo ''
 		sudo apt-get update -y &>/dev/null
 		echo "Applying critical updates"
+		echo ''
 		sudo apt-get upgrade -y  &>/dev/null
 
 		# Install essential dependencies
 		echo "Installing essential dependicies"
+		echo ''
 		sudo apt-get install -y build-essential  &>/dev/null
 
 		# Install AMP + PHPMyAdmin
 		echo "Installing LAMP server and phpMyAdmin"
+		echo ''
 		sudo apt-get -y install lamp-server^ phpmyadmin  &>/dev/null
 
 		# Install PHP modules
-		sudo apt-get -y install php-mcrypt php-zip php-mbstring
+		sudo apt-get -y install php-mcrypt php-zip php-mbstring &>/devnull
 
 		# Install ZIP
 		sudo apt-get -y install zip  &>/dev/null
 
 		# Install sendmail
 		echo "Installing sendmail"
+		echo ''
 		sudo apt-get -y install sendmail  &>/dev/null
 
 		# Enabling modules
 		echo "Enabling Apache modules"
+		echo ''
 		sudo a2enmod rewrite  &>/dev/null
 
 		# Install Lets Encrypt
 		echo "Installing additional dependencies"
+		echo ''
 		sudo apt-get install -y libxml2-dev mysql-client libfreetype6-dev libssl-dev libcurl4-openssl-dev pkg-config libbz2-dev libjpeg-dev libpng-dev libmcrypt-dev libmysqlclient-dev &>/dev/null
 
 		echo "Installing Let's Encrypt libraries"
+		echo ''
 		if ! hash letsencrypt 2>/dev/null; then
 			lecheck=$(eval "apt-cache show letsencrypt 2>&1")
 			if [[ "$lecheck" == *"No"* ]]
@@ -119,12 +130,14 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 
 		# Install WP-CLI to manage WordPress sites
 		echo "Installing WP-CLI for WordPress management"
+		echo ''
 		sudo wget --no-check-certificate -O wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar &>/dev/null
 		sudo chmod +x wp-cli.phar &>/dev/null
 		sudo mv wp-cli.phar /usr/local/bin/wp  &>/dev/null
 
 		# Import vhost creation bash script
-		echo "Configuring LampPack core utilities</p>"
+		echo "Configuring LampPack core utilities"
+		echo ''
 		sudo mv spvhost /usr/local/bin/spvhost &>/dev/null
 		sudo chmod +x /usr/local/bin/spvhost  &>/dev/null
 
@@ -142,16 +155,19 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 		
 		# Restart Apache
 		echo -e "\e[33mRestarting Apache server\e[39m"
+		echo ''
 		sudo service apache2 restart  &>/dev/null
 
 		# Enable auto upgrades
 		echo "Enabling automatic software updates"
+		echo ''
 		sudo apt-get install -y unattended-upgrades  &>/dev/null
 		sudo dpkg-reconfigure -p critical unattended-upgrades  &>/dev/null
 		sudo service apache2 restart  &>/dev/null
 
 		# Clean junk
 		echo -e "\e[33mCleaning junk and completing the installation\e[39m"
+		echo ''
 		sudo apt-get -y autoremove  &>/dev/null
 		sudo chmod -R 0755 /var/www &>/dev/null
 		sudo chown -R www-data:www-data /var/www &>/dev/null
@@ -162,6 +178,7 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 		password=$ROOT_PASS" > /root/.my.cnf
 
 		echo -e "\e[32mInstallation completed!\e[39m"
+		echo ''
 	fi
 else
 	echo -e "\e[31mIncompatible operating system detected. Only selected releases of Ubuntu are supported\e[39m"
