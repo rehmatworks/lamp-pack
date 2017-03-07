@@ -111,7 +111,7 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 		sudo mv wp-cli.phar /usr/local/bin/wp  &>/dev/null
 
 		# Import vhost creation bash script
-		echo "Configuring LampPack core utilities</p>"
+		echo "Configuring LampPack core utilities"
 		sudo mv spvhost /usr/local/bin/spvhost &>/dev/null
 		sudo chmod +x /usr/local/bin/spvhost  &>/dev/null
 
