@@ -1,11 +1,14 @@
 #!/bin/bash
 
-#################################################
-#	Author:	Rehmat (https://rehmat.works)	#
-#	Description: A bash script to install	#
-#	AMP (Apache, MySQL, PHP) on Ubuntu	#
-#	servers					#
-#################################################
+#########################################################
+#							#
+#	Package Name: LampPack				#
+#	Author: Rehmat Alam (https:rehmat.works)	#
+#	Description: LampPack allows you to		#
+#	automate the installation of LAMP stack		#
+# 	and many other utilities on Ubuntu 		#
+#							#
+#########################################################
 
 # Check if is root or not
 if [ "$EUID" -ne 0 ]
@@ -74,7 +77,7 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 		sudo apt-get -y install lamp-server^ phpmyadmin  &>/dev/null
 
 		# Install PHP modules
-		sudo apt-get -y install php-mcrypt php-zip php-mbstring &>/dev/null
+		sudo apt-get -y install php-mcrypt php-zip php-mbstring
 
 		# Install ZIP
 		sudo apt-get -y install zip  &>/dev/null
@@ -111,16 +114,16 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 		sudo mv wp-cli.phar /usr/local/bin/wp  &>/dev/null
 
 		# Import vhost creation bash script
-		echo "Configuring LampPack core utilities"
-		sudo mv sp-vhost.sh /usr/local/bin/spvhost &>/dev/null
+		echo "Configuring LampPack core utilities</p>"
+		sudo mv spvhost /usr/local/bin/spvhost &>/dev/null
 		sudo chmod +x /usr/local/bin/spvhost  &>/dev/null
 
 		# Import ssl management bash script
-		sudo mv sp-ssl.sh /usr/local/bin/spssl &>/dev/null
+		sudo mv spssl /usr/local/bin/spssl &>/dev/null
 		sudo chmod +x /usr/local/bin/spssl  &>/dev/null
 
 		# Import WordPress installation script
-		sudo mv sp-wordpress.sh /usr/local/bin/spwp &>/dev/null
+		sudo mv spwp /usr/local/bin/spwp &>/dev/null
 		sudo chmod +x /usr/local/bin/spwp  &>/dev/null
 
 		# Restart Apache
