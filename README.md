@@ -8,4 +8,19 @@ LampPack is a set of some bash/shell scripts that automate several tasks togethe
 
 Step 1: Clone the repo
 
-```bash git clone https://github.com/rehmatworks/lamp-pack```
+```bash
+git clone https://github.com/rehmatworks/lamp-pack
+```
+Step 2: Browse the directory
+```bash
+cd lamp-pack
+```
+Step 3: Make sp-lamp.sh executable
+```bash
+chmod +x sp-lamp.sh
+```
+
+Step 4: Execute the script and wait for the configuration to complete
+```bash
+./sp-lamp.sh
+```
