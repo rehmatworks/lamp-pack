@@ -44,11 +44,9 @@ domaindir=$(eval spvhost create "$domainname" 2>&1)
 
 if [ ! -d "$domaindir" ]
 	then
-	echo -e "\e[31mvhost creation failed, if this domain is already added, then please delete it first by typing spvhost delete $domainname\e[39m"
+	echo -e "\e[31mvhost creation failed, if this domain is already added, then please delete it first by typing spvhost delete $domainname. Remember that vhost deletion will delete this domain's directory with all content\e[39m"
 	exit 
 fi
-
-#cd $domaindir && rm * && wget -O wordpress.zip https://wordpress.org/latest.zip && unzip wordpress.zip && mv wordpress/* ./ && rmdir wordpress && rm wordpress.zip
 
 # Create database and database user for WordPress
 dbname=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
