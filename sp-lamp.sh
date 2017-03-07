@@ -35,6 +35,7 @@ if ! hash sudo 2>/dev/null; then
 fi
 
 echo 'Checking OS compatibility'
+echo ''
 
 cmd="lsb_release -d"
 output=$(eval $cmd 2>&1)
