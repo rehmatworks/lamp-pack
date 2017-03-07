@@ -14,7 +14,7 @@ else
 fi
 
 if [ -z "$2" ]; then
-	sitetitle="My ServerPack WordPress Website"
+	sitetitle="My LampPack WordPress Website"
 else
 	sitetitle=$2
 fi
