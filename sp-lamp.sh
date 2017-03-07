@@ -74,7 +74,7 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 		sudo apt-get -y install lamp-server^ phpmyadmin  &>/dev/null
 
 		# Install PHP modules
-		sudo apt-get -y install php-mcrypt php-zip php-mbstring
+		sudo apt-get -y install php-mcrypt php-zip php-mbstring &>/dev/null
 
 		# Install ZIP
 		sudo apt-get -y install zip  &>/dev/null
