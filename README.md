@@ -7,6 +7,11 @@ LampPack is a set of some bash/shell scripts that automate several tasks togethe
 ## Getting started
 
 Step 1: Clone the repo
+If git isn't installed, then install it first and then clone the repo
+```bash
+sudo -y apt-get install git
+```
+and then:
 
 ```bash
 git clone https://github.com/rehmatworks/lamp-pack
