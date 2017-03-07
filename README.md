@@ -40,4 +40,26 @@ When you deploy a WordPress website, a new vhost is created. So if you have crea
 ```bash
  spwp example.com "Website Title" "admin_username" "admin_email" "admin_password"
 ```
+## Installing Let's Encrypt SSL
+Thanks to [Let's Encrypt](https://github.com/letsencrypt), we can install a valid SSL on unlimited domains for free! Here is what you need to do in order to install SSL on a website.
+Required arguments:
+1. Domain type (Maybe sub or main)
+2. Domain name
+3. Force SSL (optional)
+```bash
+spssl main example.com
+```
 
+If you want to force SSL by redirecting all HTTP requests to HTTPS, then you will have to pass the third argument as well
+```bash
+spssl main example.com force
+```
+
+To install the SSL on a sub-domain, pass sub as the first argument:
+```bash
+spssl sub blog.example.com
+```
+To force the SSL on a sub domain, you have to do the same as you did above
+```bash
+spssl sub blog.example.com force
+```
