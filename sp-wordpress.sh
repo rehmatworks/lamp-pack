@@ -42,6 +42,12 @@ fi
 # Run spvhost and create the directory and virtual host for the domaim
 domaindir=$(eval spvhost create "$domainname" 2>&1)
 
+if [ ! -d "$domaindir" ]
+	then
+	echo -e "\e[31mvhost creation failed, if this domain is already added, then please delete it first\e[39m"
+	exit 
+fi
+
 #cd $domaindir && rm * && wget -O wordpress.zip https://wordpress.org/latest.zip && unzip wordpress.zip && mv wordpress/* ./ && rmdir wordpress && rm wordpress.zip
 
 # Create database and database user for WordPress
