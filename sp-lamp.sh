@@ -10,6 +10,16 @@
 #							#
 #########################################################
 
+echo ''
+echo -e "\e[32mWelcome to LampPack LAMP automation bash script\e[39m"
+echo ''
+
+echo -e "\e[32mPlease sit back and relax while LampPack configures your server, this may take several minutes\e[39m"
+
+echo ''
+
+sleep 3
+
 # Check if is root or not
 if [ "$EUID" -ne 0 ]
   then
