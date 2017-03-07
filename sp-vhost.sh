@@ -88,7 +88,7 @@ if [ "$theAction" == "create" ]
 			</div>
 		</div>
 	</body>
-</html>' > "$directoryName/index.php" &>/dev/null
+</html>' > "$directoryName/index.php"
 	sudo a2ensite $domainName &>/dev/null
 	sudo chmod -R $directoryName &>/dev/null
 	sudo chown -R www-data:www-data $directoryName &>/dev/null
