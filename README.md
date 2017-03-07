@@ -24,3 +24,20 @@ Step 4: Execute the script and wait for the configuration to complete
 ```bash
 ./sp-lamp.sh
 ```
+
+## Dealing with vhosts
+Creating vhosts
+```bash
+spvhost create example.com
+```
+
+Deleting vhosts (Beware! This will delete the domain's directory with all data as well)
+```bash
+spvhost delete example.com
+```
+## Deploying WordPress
+When you deploy a WordPress website, a new vhost is created. So if you have created any vhost previously, then you will have to delete it before proceeding
+```bash
+ spwp example.com "Website Title" "admin_username" "admin_email" "admin_password"
+```
+
