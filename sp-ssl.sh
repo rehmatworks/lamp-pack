@@ -1,12 +1,11 @@
 #!/bin/bash
 
-############################################
-#	Author:	Rehmat (https://rehmat.works)  #
-#	For: ServerPack.io					   #
-#	Description: A bash script to install  #
-#	Lets Encrypt SSL certificates on Ubuntu#
-#	servers								   #
-############################################
+#################################################
+#	Author:	Rehmat (https://rehmat.works)	#
+#	Description: A bash script to install	#
+#	Lets Encrypt SSL certificates on Ubuntu	#
+#	servers					#
+#################################################
 
 domainType=$1
 domain=$2
