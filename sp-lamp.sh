@@ -125,7 +125,11 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 		# Import WordPress installation script
 		sudo mv spwp /usr/local/bin/spwp &>/dev/null
 		sudo chmod +x /usr/local/bin/spwp  &>/dev/null
-
+		
+		# Delete apache default conf
+		sudo rm /etc/apache2/sites-available/* &>/dev/null
+		sudo rm /etc/apache2/sites-enabled/* &>/dev/null
+		
 		# Restart Apache
 		echo -e "\e[33mRestarting Apache server\e[39m"
 		sudo service apache2 restart  &>/dev/null
