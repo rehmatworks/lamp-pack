@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #################################################
 #						# 
 #	These operations make the use of  	#
