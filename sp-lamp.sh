@@ -112,15 +112,15 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 
 		# Import vhost creation bash script
 		echo "Configuring LampPack core utilities"
-		sudo mv spvhost /usr/local/bin/spvhost &>/dev/null
+		sudo mv sp-vhost.sh /usr/local/bin/spvhost &>/dev/null
 		sudo chmod +x /usr/local/bin/spvhost  &>/dev/null
 
 		# Import ssl management bash script
-		sudo mv spssl /usr/local/bin/spssl &>/dev/null
+		sudo mv sp-ssl.sh /usr/local/bin/spssl &>/dev/null
 		sudo chmod +x /usr/local/bin/spssl  &>/dev/null
 
 		# Import WordPress installation script
-		sudo mv spwp /usr/local/bin/spwp &>/dev/null
+		sudo mv sp-wp.sh /usr/local/bin/spwp &>/dev/null
 		sudo chmod +x /usr/local/bin/spwp  &>/dev/null
 
 		# Restart Apache
