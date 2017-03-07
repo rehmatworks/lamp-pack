@@ -139,15 +139,15 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 		# Import vhost creation bash script
 		echo "Configuring LampPack core utilities"
 		echo ''
-		sudo mv spvhost /usr/local/bin/spvhost &>/dev/null
+		sudo mv sp-vhost.sh /usr/local/bin/spvhost &>/dev/null
 		sudo chmod +x /usr/local/bin/spvhost  &>/dev/null
 
 		# Import ssl management bash script
-		sudo mv spssl /usr/local/bin/spssl &>/dev/null
+		sudo mv sp-ssl.sh /usr/local/bin/spssl &>/dev/null
 		sudo chmod +x /usr/local/bin/spssl  &>/dev/null
 
 		# Import WordPress installation script
-		sudo mv spwp /usr/local/bin/spwp &>/dev/null
+		sudo mv sp-wordpress.sh /usr/local/bin/spwp &>/dev/null
 		sudo chmod +x /usr/local/bin/spwp  &>/dev/null
 		
 		# Delete apache default conf
@@ -155,8 +155,9 @@ if [[ " ${allowedOS[@]} " =~ " ${os} " ]]; then
 		sudo rm /etc/apache2/sites-enabled/* &>/dev/null
 		
 		# Restart Apache
-		echo -e "\e[33mRestarting Apache server\e[39m"
+		echo -e "\e[33mReloading and restarting Apache server\e[39m"
 		echo ''
+		sudo service apache2 reload &>/dev/null
 		sudo service apache2 restart  &>/dev/null
 
 		# Enable auto upgrades
