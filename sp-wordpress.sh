@@ -1,10 +1,12 @@
 #!/bin/bash
 
-####################################
-# These operations make the use of  #
-# wp-cli, the WordPress management #
-# tool for command-line            #
-####################################
+#################################################
+#						# 
+#	These operations make the use of  	#
+#	wp-cli, the WordPress management 	#
+# 	tool for command-line			#
+#						#
+#################################################
 
 if [ -z "$1" ]; then
 	echo "Domain name cannot be empty"
